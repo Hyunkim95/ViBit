@@ -1,1 +1,47 @@
-Monthly score: <%= @score %>
+<!-- Monthly score: <%= @score %> -->
+<%= render 'components/topnav', title: "REWARDS"%>
+<div>
+  <div class="text-center reward-info">
+    <h1 id="reward-title">CURRENT</h1>
+    <h5 class="white">1st July - 31st July</h5>
+    <div class="text-center">
+      <%= link_to "EARN REWARD".html_safe, page_index_path, :class=>"white btn btn-primary earn-reward white-button btn-lg start"%>
+    </div>
+  </div>
+
+  <div class="flex-center container text-center evaluation white-background">
+    <div class="row">
+      <div class="col-xs-2 col-md-3 col-lg-3 review">
+        <p>YOUR DRIVING:
+
+        GREAT JOB!!!</p>
+      </div>
+      <div class="col-xs-8 col-md-3 col-lg-3 flex-center face">
+        <%= image_tag "smile.svg"%>
+      </div>
+      <div class="col-xs-2 col-md-3 col-lg-3 review">
+        <p>DAYS LEFT:
+        10</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container text-center less-bottom-padding">
+    <h2 class="white">REDEEM THESE</h2>
+    <div class="row flex-center">
+      <div class="col-xs-6 col-md-6 col-lg-6">
+        <div class="text-center prize-reward">
+          <%= link_to "x1 FUEL VOUCHER".html_safe, page_index_path, :class=>"white btn btn-primary prize white-button btn-lg start"%>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-6 col-lg-6">
+        <div class="text-center prize-reward">
+          <%= link_to "x2 CARWASH VOUCHER".html_safe, page_index_path, :class=>"white btn btn-primary prize white-button btn-lg start"%>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+</div>
