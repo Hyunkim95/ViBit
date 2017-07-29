@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20170729113606) do
 
   create_table "drive_data", force: :cascade do |t|
     t.bigint "user_id"
-    t.text "stats", default: [], array: true
     t.datetime "start_time"
     t.datetime "end_time"
     t.decimal "start_loc", default: [], array: true
@@ -25,6 +24,7 @@ ActiveRecord::Schema.define(version: 20170729113606) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "month"
+    t.json "stats", default: [], array: true
     t.index ["user_id"], name: "index_drive_data_on_user_id"
   end
 

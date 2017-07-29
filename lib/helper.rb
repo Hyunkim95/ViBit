@@ -49,4 +49,45 @@ module Helper
     rm * c # Delta in meters
   end
 
+
+
+  def self.get_last_half_year
+    current_month = Date.today.month
+    month_names = 6.downto(1).map { |n| DateTime::MONTHNAMES[(current_month - n) % 12][0..2] }
+    month_names
+  end
+
+  def self.get_traffic_light_deductions(user_id)
+    current_month = Date.today
+    month_names = 6.downto(1).map { |n| (current_month - n.months).to_s[0..6] }
+    month_names
+
+    month_object = {}
+
+    month_names.each do |month|
+      month_object[month] = 0
+      array = DriveDatum.where(month: month).where(user_id: user_id)
+
+      array.each do |data|
+        data[:stats].each do |stat|
+          if stat["violation"] == "traffic_light"
+            month_object[month] += 1
+          end
+        end
+      end
+    end
+
+    puts month_names
+    puts month_object
+
+    month_array = []
+
+    month_names.each do |month|
+      month_array.push(month_object[month])
+    end
+
+    return month_array
+
+  end
+
 end
