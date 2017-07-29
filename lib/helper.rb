@@ -90,4 +90,29 @@ module Helper
 
   end
 
+  def self.total_sec(array)
+    array[0] * 60 * 60 + array[1] * 60 + array[2]
+  end
+
+  def self.time_formatter(sec)
+    seconds = sec % 60
+    minutes = (sec / 60) % 60
+    hours = sec / (60 * 60)
+
+    format("%02d:%02d:%02d", hours, minutes, seconds)
+  end
+
+  def self.violation_counter(array)
+    obj = Hash.new(0)
+    array.each do |item|
+      type = item[:violation]
+      obj[type] += 1
+    end
+    obj
+  end
+
+  def self.count_deduction_drive(array)
+    return 100 - array.length * 5
+  end
+
 end

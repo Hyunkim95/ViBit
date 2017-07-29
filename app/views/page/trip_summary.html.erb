@@ -1,11 +1,55 @@
-Trip Summary: <br>
-Start Time: <%= @trip_data[:start_time] %><br>
-End Time: <%= @trip_data[:end_time] %><br>
-Start Location: <%= @trip_data[:start_loc] %><br>
-End Location: <%= @trip_data[:end_loc] %><br>
-Total Distance: <%= @distance.to_i %> <br>
-Violations:<br>
-<% @trip_data[:stats].each do |item| %>
-Type: <%= item[:violation] %><br>
-Location: <%= item[:location] %><br><br>
-<% end %>
+<div class="white-background">
+  <div class="title text-center">
+    <% if @score >= 90 %>
+      <h1 id="start-title">Great Drive</h1>
+    <% else %>
+      <h1 id="start-title">Oops!</h1>
+    <% end %>
+  </div>
+
+  <div class="subtitle text-center orange">
+    <h5 ><%= Time.now.strftime("%d/%m/%Y %H:%M") %></h5>
+  </div>
+
+  <div class="flex-center driving-review">
+    <% if @score >= 90 %>
+      <%= image_tag "good_driving.svg" %>
+    <% else %>
+      <%= image_tag "bad_driving.svg" %>
+    <% end %>
+  </div>
+
+  <div class="measures orange text-center">
+    Total Distance: <%= @distance.to_i %> <br>
+    Time: <%= @time %>
+  </div>
+
+  <div class="flex-center text-center">
+    <div>
+      <div class="violation">
+        <%= image_tag "roadsigns_orange.svg" %>
+      </div>
+      <%= @counter["sign_adherence"] %>
+    </div>
+
+  <div>
+    <div class="violation">
+      <%= image_tag "trafficlight_orange.svg" %>
+    </div>
+    <%= @counter["traffic_light"] %>
+  </div>
+
+  <div>
+    <div class="violation">
+      <%= image_tag "speed_orange.svg" %>
+    </div>
+    <%= @counter["speeding"] %>
+  </div>
+
+  </div>
+
+  <div class="continue-button text-center">
+    <%= link_to "CONTINUE".html_safe, page_trip_progress_path, :class=>"btn orange-button btn-round-lg btn-lg continue"%>
+  </div>
+
+</div>

@@ -23,12 +23,17 @@ class PageController < ApplicationController
       start_loc: [-33.884369, 151.175759],
       end_loc: [-33.877611, 151.211725]
     }
-
+    d = DateTime.now
+    end_time = [@trip_data[:end_time][11..13].to_i, @trip_data[:end_time][14..16].to_i, @trip_data[:end_time][17..19].to_i]
+    start_time = [@trip_data[:start_time][11..13].to_i, @trip_data[:start_time][14..16].to_i, @trip_data[:start_time][17..19].to_i]
+    total_sec = Helper.total_sec(end_time) - Helper.total_sec(start_time)
+    @time = Helper.time_formatter(total_sec)
+    @counter = Helper.violation_counter(@trip_data[:stats])
+    @score = Helper.count_deduction_drive(@trip_data[:stats])
     @drive_datum = DriveDatum.new(@trip_data)
     @drive_datum[:user_id] = current_user.id
     @drive_datum[:month] = Helper.get_month_year(@trip_data)
     @drive_datum.save
-
     @distance = Helper.distance(@drive_datum[:start_loc], @drive_datum[:end_loc])
   end
 
