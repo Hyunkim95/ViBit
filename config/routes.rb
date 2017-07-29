@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'page/rewards'
   get 'page/board'
   get 'page/connect'
+  get 'page/landing_page'
 
   resources :drive_data
   devise_for :users
