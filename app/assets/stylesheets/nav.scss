@@ -1,6 +1,5 @@
 .bottom-nav{
   bottom: 0;
-  padding-bottom: 0.2em;
   background: white;
   position: fixed;
   width: 100%;
@@ -12,12 +11,16 @@
     span{
       margin: 0 auto;
       img{
-        height: 3em;
-        width: 3em;
+        height: 2.5em;
+        width: 2.5em;
       }
       img path{
         background-color: #000;
       }
     }
   }
+}
+
+.nav-link{
+  color: #333333;
 }
