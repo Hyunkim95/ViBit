@@ -1,0 +1,54 @@
+<div class="text-center">
+  <br>
+  <div style="float: left">&nbsp;&nbsp;<a href="/page/progress"><%= image_tag "leftarrow.svg", height: '10px' %></a></div><span class="white-text thin-text"><%= offence %></span><br><br>
+
+  <div class="white-bg">
+    <br>
+    <strong><%= @month_ranges[0] %> - <%= @month_ranges[1] %></strong>
+    <div class="chart-padding">
+      <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+  </div>
+  <div class="dark-grey-bg box-padding">
+    <div class="sub-title">Total Offences = <%= @deductions[offence_code] %></div>
+  </div>
+</div>
+<script>
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: <%= @month_labels.html_safe %>,
+        datasets: [{
+            label: '<%= offence_label %>',
+            data: <%= @deduction_points %>,
+            backgroundColor: [
+                'rgba(251,105,0,0.2)'
+            ],
+            borderColor: [
+                'rgba(251,105,0,1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+      legend: {
+        display: false
+      },
+      scales: {
+         yAxes: [{
+             ticks: {
+                 beginAtZero: true,
+                 userCallback: function(label, index, labels) {
+                     // when the floored value is the same as the value we have a whole number
+                     if (Math.floor(label) === label) {
+                         return label;
+                     }
+
+                 },
+             }
+         }],
+     },
+ }
+});
+</script>
