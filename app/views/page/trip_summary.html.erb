@@ -1,0 +1,10 @@
+Trip Summary: <br>
+Start Time: <%= @trip_data[:start_time] %><br>
+End Time: <%= @trip_data[:end_time] %><br>
+Start Location: <%= @trip_data[:start_loc] %><br>
+End Location: <%= @trip_data[:end_loc] %><br>
+Violations:<br>
+<% @trip_data[:stats].each do |item| %>
+Type: <%= item[:violation] %><br>
+Location: <%= item[:location] %><br><br>
+<% end %>
