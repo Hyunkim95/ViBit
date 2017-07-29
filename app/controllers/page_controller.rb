@@ -1,4 +1,7 @@
+require_dependency 'helper.rb'
+
 class PageController < ApplicationController
+  include Helper
   def index
 
   end
@@ -33,6 +36,10 @@ class PageController < ApplicationController
 
   def traffic_light
 
+  end
+
+  def progress
+    @good_days = Helper.count_good_drives(current_user)
   end
 
 end

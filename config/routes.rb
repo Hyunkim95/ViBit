@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'page/trip_progress'
   get 'page/trip_summary'
   get 'page/traffic_light'
+  get 'page/progress'
 
   resources :drive_data
   devise_for :users
