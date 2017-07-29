@@ -6,8 +6,16 @@
   color: white
 }
 
+a:visited{
+  color: white !important;
+}
+
+.wheel-image{
+  padding-top: 2.5em;
+}
+
 .wheel-image img{
-  width: 60%;
+  width: 50%;
   height: auto;
 }
 
@@ -22,4 +30,17 @@
   background-color: rgba(255, 255, 255, 0.3) !important;
   border: none !important;
   border-radius: 5em !important;
+}
+
+.start-button{
+  padding-top: 3em;
+}
+
+.switch-account{
+  padding-top: 1em;
+  padding-bottom: 5em;
+}
+
+.title{
+  padding-top: 3em;
 }
