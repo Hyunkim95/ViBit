@@ -6,10 +6,6 @@ class PageController < ApplicationController
 
   end
 
-  def trip_progress
-
-  end
-
   def trip_summary
     # stats = [["traffic_light", [-33.881842, 151.20396]], ["sign_adherence", [-33.879237, 151.205443]]].to_json
     @trip_data = {
@@ -31,8 +27,9 @@ class PageController < ApplicationController
     @drive_datum = DriveDatum.new(@trip_data)
     @drive_datum[:user_id] = current_user.id
     @drive_datum[:month] = Helper.get_month_year(@trip_data)
-
     @drive_datum.save
+
+    @distance = Helper.distance(@drive_datum[:start_loc], @drive_datum[:end_loc])
   end
 
   def traffic_light
@@ -46,6 +43,16 @@ class PageController < ApplicationController
 
   def rewards
     @score = Helper.get_monthly_score(Date.today.to_s[0..6], current_user.id)
+  end
+
+  def board
+    @users = []
+    User.all.each do |user|
+      array = []
+      array << user
+      array << Helper.get_monthly_score(Date.today.to_s[0..6], user.id)
+      @users << array
+    end
   end
 
 end

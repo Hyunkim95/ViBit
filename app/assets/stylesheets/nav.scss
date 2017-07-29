@@ -1,0 +1,21 @@
+.bottom-nav{
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  .nav-icon{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    span{
+      margin: 0 auto;
+      img{
+        height: 60px;
+        width: 60px;
+      }
+      img path{
+        background-color: #000;
+      }
+    }
+  }
+}
