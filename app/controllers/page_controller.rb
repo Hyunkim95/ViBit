@@ -15,7 +15,7 @@ class PageController < ApplicationController
           location: [-33.881842, 151.203960]
         },
         {
-          violation: "school_zone",
+          violation: "sign_adherence",
           location: [-33.879237, 151.205443]
         }
       ],
