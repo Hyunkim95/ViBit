@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'page#index'
-
+  root 'page#connect'
+  get 'page/index'
   get 'page/trip_progress'
   get 'page/trip_summary'
   get 'page/traffic_light'
