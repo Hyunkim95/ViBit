@@ -1,14 +1,21 @@
 <div>
-  <div class="text-center">
+  <div class="title text-center">
     <h1 class="white" id="start-title">ViBit</h1>
   </div>
-  <div class="text-center">
+
+  <div class="subtitle text-center">
     <h5 class="white">SHAPING TOMORROW'S DRIVERS</h5>
   </div>
-  <div>
-    <%= image_tag "home.svg" %>
+
+  <div class="flex-center wheel-image">
+    <%= image_tag "wheel.svg" %>
   </div>
-  <div class="text-center">
-    <%= link_to "<button>START TRIP</button>".html_safe, page_trip_progress_path, :class=>"btn btn-primary btn-round-lg btn-lg"%>
+
+  <div class="start-button text-center">
+    <%= link_to "START TRIP".html_safe, page_trip_progress_path, :class=>"white btn btn-primary btn-round-lg btn-lg"%>
+  </div>
+
+  <div class="switch-account text-center">
+    <%= link_to "Switch Accounts", new_user_session_path %>
   </div>
 </div>
