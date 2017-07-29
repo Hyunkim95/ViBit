@@ -1,27 +1,35 @@
 <div class="bottom-nav">
   <div class="nav-icon">
     <span class="text-center">
-      <%= image_tag "home.svg" %> <br>
-      <span>Home</span>
+      <a href="/">
+        <%= image_tag "home.svg" %><br>
+        <span class="nav-link">Home</span>
+      </a>
     </span>
   </div>
   <div class="nav-icon">
     <span class="text-center">
-      <%= image_tag "progress.svg" %><br>
-      <span>Progress</span>
+      <a href="/page/progress">
+        <%= image_tag "progress.svg" %><br>
+        <span class="nav-link">Progress</span>
+      </a>
     </span>
 
   </div>
   <div class="nav-icon">
     <span class="text-center">
-      <%= image_tag "rewards.svg" %><br>
-      <span>Reward</span>
+      <a href="/page/rewards">
+        <%= image_tag "rewards.svg" %><br>
+        <span class="nav-link">Reward</span>
+      </a>
     </span>
   </div>
   <div class="nav-icon">
     <span class="text-center">
-      <%= image_tag("rank.svg", :id => "rank") %><br>
-      <span>Rank</span>
+      <a href="/page/board">
+        <%= image_tag("rank.svg", :id => "rank") %><br>
+        <span class="nav-link">Rank</span>
+      </a>
     </span>
   </div>
 </div>
