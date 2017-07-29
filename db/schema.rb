@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170729095452) do
+ActiveRecord::Schema.define(version: 20170729133359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "drive_data", force: :cascade do |t|
     t.bigint "user_id"
-    t.text "stats", default: [], array: true
     t.datetime "start_time"
     t.datetime "end_time"
     t.decimal "start_loc", default: [], array: true
@@ -25,6 +24,7 @@ ActiveRecord::Schema.define(version: 20170729095452) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "month"
+    t.json "stats", default: [], array: true
     t.index ["user_id"], name: "index_drive_data_on_user_id"
   end
 
