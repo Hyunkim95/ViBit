@@ -1,0 +1,30 @@
+<svg width="53" height="51" viewBox="0 0 53 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Page 1</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-1528 -195)">
+<g id="Page 1">
+<g id="Group 3">
+<mask id="mask0_outline" mask-type="alpha">
+<g id="Clip 2">
+<use xlink:href="#path0_fill" transform="translate(1528 195)" fill="#FFFFFF"/>
+</g>
+</mask>
+<g id="Fill 1" mask="url(#mask0_outline)">
+<use xlink:href="#path1_fill" transform="translate(1528 195)" fill="#FB5B05"/>
+</g>
+</g>
+<g id="Fill 4">
+<use xlink:href="#path2_fill" transform="translate(1552.18 210.886)" fill="#FB5B05"/>
+</g>
+<g id="Fill 6">
+<use xlink:href="#path3_fill" transform="translate(1552.08 231.772)" fill="#FB5B05"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 53 51L 0 51L 0 0L 53 0L 53 51Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 49.381 46.3933C 49.1489 46.8532 48.7115 47.1389 48.2396 47.1389L 4.7601 47.1389C 4.28818 47.1389 3.85082 46.8533 3.61884 46.3934C 3.38676 45.9336 3.39401 45.367 3.63758 44.9148L 25.3774 4.57073C 25.6132 4.13323 26.0432 3.86148 26.4998 3.86148C 26.9565 3.86148 27.3865 4.13323 27.6224 4.57073L 49.3619 44.9148C 49.6058 45.367 49.6129 45.9336 49.381 46.3933ZM 52.3172 42.9207L 30.5774 2.57673C 29.7209 0.987369 28.1585 0 26.4999 0C 24.8412 0 23.2789 0.987369 22.4223 2.57684L 0.682732 42.9207C -0.202431 44.5636 -0.228621 46.6217 0.614308 48.2921C 1.45744 49.9624 3.046 51.0001 4.76022 51.0001L 48.2397 51.0001C 49.9539 51.0001 51.5427 49.9624 52.3857 48.292C 53.2286 46.6216 53.2025 44.5633 52.3172 42.9207Z"/>
+<path id="path2_fill" fill-rule="evenodd" d="M 2.33707 18.4131C 3.10537 18.4131 4.19384 17.9474 4.19384 16.8369C 4.19384 12.574 4.64195 6.44825 4.64195 2.18521C 4.64195 0.788251 3.58558 0 2.33697 0C 1.02439 0 0 0.788135 0 2.18521C 0 6.44825 0.448119 12.574 0.448119 16.8369C 0.448223 17.9474 1.31268 18.4131 2.33707 18.4131Z"/>
+<path id="path3_fill" fill-rule="evenodd" d="M 2.46512 0C 1.05658 0 0 1.25367 0 2.75836C 0 4.22713 1.05658 5.51683 2.46512 5.51683C 3.7776 5.51683 4.89816 4.22713 4.89816 2.75836C 4.89816 1.25367 3.77749 0 2.46512 0Z"/>
+</defs>
+</svg>
