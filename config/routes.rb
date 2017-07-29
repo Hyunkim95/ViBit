@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'page/trip_summary'
   get 'page/traffic_light'
   get 'page/progress'
+  get 'page/rewards'
 
   resources :drive_data
   devise_for :users

@@ -30,6 +30,7 @@ class PageController < ApplicationController
 
     @drive_datum = DriveDatum.new(@trip_data)
     @drive_datum[:user_id] = current_user.id
+    @drive_datum[:month] = Helper.get_month_year(@trip_data)
 
     @drive_datum.save
   end
@@ -39,7 +40,12 @@ class PageController < ApplicationController
   end
 
   def progress
-    @good_days = Helper.count_good_drives(current_user)
+    @good_drives = Helper.count_good_drives(current_user)
+  end
+
+  def rewards
+    @drives = Helper.drive_between_months(Date.today.to_s[0..6], current_user.id)
+    @deduction = Helper.count_deduction(Date.today.to_s[0..6], current_user.id)
   end
 
 end
