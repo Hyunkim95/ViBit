@@ -36,7 +36,8 @@ class PageController < ApplicationController
   end
 
   def traffic_light
-
+    @month_labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"].to_json
+    @deduction_points = [0, 0, 11, 3, 2, 1]
   end
 
   def progress
@@ -44,8 +45,7 @@ class PageController < ApplicationController
   end
 
   def rewards
-    @drives = Helper.drive_between_months(Date.today.to_s[0..6], current_user.id)
-    @deduction = Helper.count_deduction(Date.today.to_s[0..6], current_user.id)
+    @score = Helper.get_monthly_score(Date.today.to_s[0..6], current_user.id)
   end
 
 end

@@ -1,5 +1,6 @@
 <canvas id="myChart" width="400" height="400"></canvas>
 <script>
+console.log("hello")
 var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
     type: 'line',
@@ -7,7 +8,7 @@ var myChart = new Chart(ctx, {
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
         datasets: [{
             label: 'Traffic Light Violations',
-            data: [10, 2, 3, 3, 2, 1],
+            data: <%= @deduction_points %>,
             backgroundColor: [
                 'rgba(251,105,0,0.2)'
             ],
@@ -16,6 +17,22 @@ var myChart = new Chart(ctx, {
             ],
             borderWidth: 1
         }]
-    }
+    },
+    options: {
+     scales: {
+         yAxes: [{
+             ticks: {
+                 beginAtZero: true,
+                 userCallback: function(label, index, labels) {
+                     // when the floored value is the same as the value we have a whole number
+                     if (Math.floor(label) === label) {
+                         return label;
+                     }
+
+                 },
+             }
+         }],
+     },
+ }
 });
 </script>

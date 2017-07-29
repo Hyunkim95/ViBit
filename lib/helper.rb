@@ -25,4 +25,11 @@ module Helper
     end
     counter
   end
+
+  def self.get_monthly_score(month, user_id)
+    return 100 if drive_between_months(month, user_id) != 0 && count_deduction(month, user_id) == 0
+    return 0 if drive_between_months(month, user_id) == 0
+    (drive_between_months(month, user_id) * 100 - count_deduction(month, user_id) * 5) / drive_between_months(month, user_id)
+  end
+
 end
