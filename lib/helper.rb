@@ -6,6 +6,23 @@ module Helper
             counter += 1
           end
       end
-      return counter
+      counter
+  end
+
+  def self.get_month_year(drive)
+    drive[:start_time][0..6]
+  end
+
+  def self.drive_between_months(month, user_id)
+    DriveDatum.where(month: month).where(user_id: user_id).length
+  end
+
+  def self.count_deduction(month, user_id)
+    counter = 0
+    array = DriveDatum.where(month: month).where(user_id: user_id)
+    array.each do |data|
+      counter += data[:stats].length
+    end
+    counter
   end
 end
