@@ -16,6 +16,12 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,500,700');
+
+html body {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.5em;
+}
 
 .background{
   background: red; /* For browsers that do not support gradients */
@@ -23,4 +29,32 @@
   background: -o-linear-gradient(#FB6900, #F63700); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(#FB6900, #F63700); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#FB6900, #F63700); /* Standard syntax */
+}
+
+.dark-grey-bg{
+  background-color: #333333;
+  color: white;
+}
+
+.white-text{
+  color: white;
+}
+
+.thin-text{
+  font-weight: 300;
+}
+
+.sub-title{
+  font-size: 2em;
+}
+
+.mini-title{
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+.big-text{
+  color: #333333;
+  font-size: 4em;
+  font-weight: bold;
 }
