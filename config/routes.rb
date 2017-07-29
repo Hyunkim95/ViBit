@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'page/trip_progress'
   get 'page/trip_summary'
   get 'page/traffic_light'
+  get 'page/sign_adherence'
+  get 'page/speed'
   get 'page/progress'
   get 'page/rewards'
   get 'page/board'

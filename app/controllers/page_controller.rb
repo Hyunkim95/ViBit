@@ -35,10 +35,27 @@ class PageController < ApplicationController
   def traffic_light
     @month_labels = Helper.get_last_half_year.to_json
     @deduction_points = Helper.get_traffic_light_deductions(current_user.id)
+    @deductions = Helper.get_deductions(current_user.id)
+    @month_ranges = Helper.get_month_range_names
+  end
+
+  def sign_adherence
+    @month_labels = Helper.get_last_half_year.to_json
+    @deduction_points = Helper.get_sign_adherence_deductions(current_user.id)
+    @deductions = Helper.get_deductions(current_user.id)
+    @month_ranges = Helper.get_month_range_names
+  end
+
+  def speed
+    @month_labels = Helper.get_last_half_year.to_json
+    @deduction_points = Helper.get_speed_deductions(current_user.id)
+    @deductions = Helper.get_deductions(current_user.id)
+    @month_ranges = Helper.get_month_range_names
   end
 
   def progress
     @good_drives = Helper.count_good_drives(current_user)
+    @deductions = Helper.get_deductions(current_user.id)
   end
 
   def rewards

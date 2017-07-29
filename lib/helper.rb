@@ -57,6 +57,32 @@ module Helper
     month_names
   end
 
+  def self.get_deductions(user_id)
+    current_month = Date.today
+    month_names = 6.downto(1).map { |n| (current_month - n.months).to_s[0..6] }
+    month_names
+
+    deductions_object = {}
+
+    deductions_object["traffic_light"] = 0
+    deductions_object["sign_adherence"] = 0
+    deductions_object["speed"] = 0
+
+    puts deductions_object
+
+    month_names.each do |month|
+      array = DriveDatum.where(month: month).where(user_id: user_id)
+
+      array.each do |data|
+        data[:stats].each do |stat|
+          deductions_object[stat["violation"]] += 1
+        end
+      end
+    end
+
+    return deductions_object
+  end
+
   def self.get_traffic_light_deductions(user_id)
     current_month = Date.today
     month_names = 6.downto(1).map { |n| (current_month - n.months).to_s[0..6] }
@@ -77,8 +103,34 @@ module Helper
       end
     end
 
-    puts month_names
-    puts month_object
+    month_array = []
+
+    month_names.each do |month|
+      month_array.push(month_object[month])
+    end
+
+    return month_array
+  end
+
+  def self.get_sign_adherence_deductions(user_id)
+    current_month = Date.today
+    month_names = 6.downto(1).map { |n| (current_month - n.months).to_s[0..6] }
+    month_names
+
+    month_object = {}
+
+    month_names.each do |month|
+      month_object[month] = 0
+      array = DriveDatum.where(month: month).where(user_id: user_id)
+
+      array.each do |data|
+        data[:stats].each do |stat|
+          if stat["violation"] == "sign_adherence"
+            month_object[month] += 1
+          end
+        end
+      end
+    end
 
     month_array = []
 
@@ -87,7 +139,41 @@ module Helper
     end
 
     return month_array
+  end
 
+  def self.get_speed_deductions(user_id)
+    current_month = Date.today
+    month_names = 6.downto(1).map { |n| (current_month - n.months).to_s[0..6] }
+    month_names
+
+    month_object = {}
+
+    month_names.each do |month|
+      month_object[month] = 0
+      array = DriveDatum.where(month: month).where(user_id: user_id)
+
+      array.each do |data|
+        data[:stats].each do |stat|
+          if stat["violation"] == "speed"
+            month_object[month] += 1
+          end
+        end
+      end
+    end
+
+    month_array = []
+
+    month_names.each do |month|
+      month_array.push(month_object[month])
+    end
+
+    return month_array
+  end
+
+  def self.get_month_range_names
+    range = []
+    range.push((Time.now-1).strftime("%b %Y"))
+    range.push((Time.now-6.months).strftime("%b %Y"))
   end
 
 end
