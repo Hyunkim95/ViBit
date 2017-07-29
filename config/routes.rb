@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root 'page#index'
 
-  get 'page/trip'
+  get 'page/trip_progress'
   get 'page/trip_summary'
+  get 'page/traffic_light'
 
   resources :drive_data
   devise_for :users

@@ -3,7 +3,7 @@ class PageController < ApplicationController
 
   end
 
-  def trip
+  def trip_progress
 
   end
 
@@ -29,6 +29,10 @@ class PageController < ApplicationController
     @drive_datum[:user_id] = current_user.id
 
     @drive_datum.save
+  end
+
+  def traffic_light
+
   end
 
 end
