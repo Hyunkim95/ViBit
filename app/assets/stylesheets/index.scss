@@ -6,7 +6,7 @@
   color: white
 }
 
-a:visited{
+.start:visited{
   color: white !important;
 }
 
@@ -25,9 +25,12 @@ a:visited{
   align-items: center;
 }
 
+.white-background{
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
 .btn-round-lg{
   width: 80%;
-  background-color: rgba(255, 255, 255, 0.3) !important;
   border: none !important;
   border-radius: 5em !important;
 }
@@ -38,7 +41,7 @@ a:visited{
 
 .switch-account{
   padding-top: 1em;
-  padding-bottom: 5em;
+  padding-bottom: 50vh;
 }
 
 .title{
