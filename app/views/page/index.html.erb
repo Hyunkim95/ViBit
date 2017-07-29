@@ -1,5 +1,14 @@
-<%= link_to "Start Trip", page_trip_progress_path %>
-<br><br>
-<%= link_to "Traffic Light", page_traffic_light_path %><br>
-Speed Limit<br>
-Sign Adherence<br>
+<div>
+  <div class="text-center">
+    <h1 class="white" id="start-title">ViBit</h1>
+  </div>
+  <div class="text-center">
+    <h5 class="white">SHAPING TOMORROW'S DRIVERS</h5>
+  </div>
+  <div>
+    <%= image_tag "home.svg" %>
+  </div>
+  <div class="text-center">
+    <%= link_to "<button>START TRIP</button>".html_safe, page_trip_progress_path, :class=>"btn btn-primary btn-round-lg btn-lg"%>
+  </div>
+</div>
