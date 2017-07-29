@@ -3,28 +3,32 @@
   <head>
     <title>Vibit</title>
     <%= csrf_meta_tags %>
-
+    <%= javascript_include_tag "application" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
-    <li><%= link_to "Home", root_path %></li>
-    <li><%= link_to "Progress", page_progress_path %></li>
-    <li><%= link_to "Rewards", page_rewards_path %></li>
-    <li>Board</li>
-    <% if user_signed_in? %>
-      <li>
-      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-      </li>
-    <% else %>
-      <li>
-      <%= link_to('Login', new_user_session_path)  %>
-      </li>
-    <% end %>
-    <br>
+    <div class="background">
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Progress", page_progress_path %></li>
+      <li><%= link_to "Rewards", page_rewards_path %></li>
+      <li><%= link_to "Board", page_board_path %></li>
+      <% if user_signed_in? %>
+        <li>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        </li>
+      <% else %>
+        <li>
+        <%= link_to('Login', new_user_session_path)  %>
+        </li>
+      <% end %>
+      <br>
 
-    <%= yield %>
+      <%= yield %>
+      <%= render 'components/nav' %>
+    </div>
   </body>
 </html>

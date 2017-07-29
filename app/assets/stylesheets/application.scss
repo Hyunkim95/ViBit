@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.background{
+  height: 100vh;
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#FB6900,#F63700); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#FB6900, #F63700); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#FB6900, #F63700); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#FB6900, #F63700); /* Standard syntax */
+}
