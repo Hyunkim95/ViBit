@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @drive_datum.user %>
+</p>
+
+<p>
+  <strong>Stats:</strong>
+  <%= @drive_datum.stats %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @drive_datum.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @drive_datum.end_time %>
+</p>
+
+<p>
+  <strong>Start loc:</strong>
+  <%= @drive_datum.start_loc %>
+</p>
+
+<p>
+  <strong>End loc:</strong>
+  <%= @drive_datum.end_loc %>
+</p>
+
+<%= link_to 'Edit', edit_drive_datum_path(@drive_datum) %> |
+<%= link_to 'Back', drive_data_path %>
