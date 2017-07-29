@@ -1,8 +1,20 @@
 <!-- Monthly score: <%= @score %> -->
-<%= render 'components/topnav', title: "REWARDS"%>
+
 <div>
   <div class="text-center reward-info">
-    <h1 id="reward-title">CURRENT</h1>
+    <div class="top-nav-with-info">
+      <div class="back"></div>
+      <div class="heading text-center">
+        <span class="white-text thin-text">REWARDS</span>
+      </div>
+      <div class="back flex-center">
+        <a href="/page/rewards_information"><%= image_tag "info.svg", height: '15px' %></a>
+      </div>
+
+    </div>
+
+    <!-- <span class="white-text thin-text">REWARDS</span><br> -->
+    <span class="big-text">CURRENT</span>
     <h5 class="white">1st July - 31st July</h5>
     <div class="text-center">
       <%= link_to "EARN REWARD".html_safe, page_index_path, :class=>"white btn btn-primary earn-reward white-button btn-lg start"%>

@@ -26,6 +26,7 @@ html body {
 }
 
 .background{
+  min-height: 100vh;
   background: red; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(#FB6900,#F63700); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(#FB6900, #F63700); /* For Opera 11.1 to 12.0 */
