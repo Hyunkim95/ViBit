@@ -24,16 +24,21 @@
   <div class="flex-center container text-center evaluation white-background">
     <div class="row">
       <div class="col-xs-2 col-md-3 col-lg-3 review">
-        <p>YOUR DRIVING:
-
-        GREAT JOB!!!</p>
+        <% if @score >= 90 %>
+          <p>YOUR DRIVING: GREAT JOB!!!</p>
+        <% else %>
+          <p>YOUR DRIVING: OOPS WE CAN DO BETTER</p>
+        <% end %>
       </div>
       <div class="col-xs-8 col-md-3 col-lg-3 flex-center face">
+        <% if @score >= 90 %>
         <%= image_tag "smile.svg"%>
+        <% else %>
+        <%= image_tag "frown.svg"%>
+        <% end %>
       </div>
       <div class="col-xs-2 col-md-3 col-lg-3 review">
-        <p>DAYS LEFT:
-        10</p>
+        <p>DAYS LEFT: 10</p>
       </div>
     </div>
   </div>
