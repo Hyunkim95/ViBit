@@ -10,14 +10,14 @@ class PageController < ApplicationController
     # stats = [["traffic_light", [-33.881842, 151.20396]], ["sign_adherence", [-33.879237, 151.205443]]].to_json
     @trip_data = {
       stats: [
-        # {
-        # violation: "traffic_light",
-        # location: [-33.881842, 151.20396]
-        # },
-        # {
-        #   violation: "sign_adherence",
-        #   location: [-33.879237, 151.205443]
-        # },
+        {
+        violation: "traffic_light",
+        location: [-33.881842, 151.20396]
+        },
+        {
+          violation: "sign_adherence",
+          location: [-33.879237, 151.205443]
+        },
       ],
       start_time: "2017-07-29 06:11:00",
       end_time: "2017-07-29 06:20:00",
@@ -70,6 +70,21 @@ class PageController < ApplicationController
 
   def board
     @users = []
+    # @sorted_user = []
+    #
+    # User.all.each do |user|
+    #   if @sorted_user.length == 0
+    #     @sorted_user.push(user)
+    #   else
+    #     @sorted_user.each_with_index do |item, index|
+    #       if user <= item
+    #
+    #       end
+    #     end
+    #   end
+    #     @sorted_user.push(user)
+    # end
+
     User.all.each do |user|
       array = []
       array << user
