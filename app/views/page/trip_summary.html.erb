@@ -20,7 +20,7 @@
   </div>
 
   <div class="measures orange text-center">
-    Total Distance: <%= "%.2f" % (@distance/1000) %> km<br>
+    Total Distance: <%= @distance.to_i %> <br>
     Time: <%= @time %>
   </div>
 
@@ -52,6 +52,6 @@
     <%= link_to "CONTINUE".html_safe, page_progress_path, :class=>"btn orange-button btn-round-lg btn-lg continue"%>
   </div>
 
-  <%#= render 'components/map' %>
+  <%= render 'components/map' %>
 
 </div>
