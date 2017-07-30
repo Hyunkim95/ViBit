@@ -19,8 +19,8 @@ function addMarkersToMap(map) {
 
 
 var platform = new H.service.Platform({
-app_id: ENV[APP_ID],
-app_code: ENV[APP_CODE],
+app_id: "<%= ENV['APP_ID'] %>",
+app_code: "<%= ENV['APP_CODE'] %>",
 useCIT: true,
 useHTTPS: true
 });
