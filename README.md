@@ -1,5 +1,7 @@
 # ViBit
 
+Intro Video: https://youtu.be/lqiJZsyGc3k
+
 ## Introduction
 How are reckless drivers supposed to know they are driving dangerously?
 How can we help new drivers improve rapidly and make less mistakes?
