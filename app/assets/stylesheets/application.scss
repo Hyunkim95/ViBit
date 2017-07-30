@@ -25,6 +25,10 @@ html body {
   font-size: 1.5em;
 }
 
+.mobile-container{
+  max-width: 500px;
+}
+
 .background{
   min-height: 100vh;
   background: red; /* For browsers that do not support gradients */
