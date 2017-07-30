@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  root 'page#connect'
+
+  authenticated do
+    root :to => 'page#connect'
+  end
+
+  root :to => 'page#landing_page'
+
   get 'page/index'
   get 'page/trip_progress'
   get 'page/trip_summary'
