@@ -60,12 +60,20 @@ class PageController < ApplicationController
   end
 
   def progress
-    @good_drives = Helper.count_good_drives(current_user)
-    @deductions = Helper.get_deductions(current_user.id)
+    if current_user
+      @good_drives = Helper.count_good_drives(current_user)
+      @deductions = Helper.get_deductions(current_user.id)
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def rewards
-    @score = Helper.get_monthly_score(Date.today.to_s[0..6], current_user.id)
+    if current_user
+      @score = Helper.get_monthly_score(Date.today.to_s[0..6], current_user.id)
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def board
