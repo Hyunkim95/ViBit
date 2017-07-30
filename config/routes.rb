@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'page/progress'
   get 'page/rewards'
   get 'page/rewards_information'
+  get 'page/carwash_voucher'
   get 'page/board'
   get 'page/connect'
   get 'page/landing_page'
