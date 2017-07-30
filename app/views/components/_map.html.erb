@@ -1,0 +1,20 @@
+<div style="width: 640px; height: 480px" id="mapContainer"></div>
+<script>
+  // Initialize the platform object:
+  var platform = new H.service.Platform({
+  'app_id': '{YOUR_APP_ID}',
+  'app_code': '{YOUR_APP_CODE}'
+  });
+
+  // Obtain the default map types from the platform object
+  var maptypes = platform.createDefaultLayers();
+
+  // Instantiate (and display) a map object:
+  var map = new H.Map(
+  document.getElementById('mapContainer'),
+  maptypes.normal.map,
+  {
+    zoom: 10,
+    center: { lng: 33.8822, lat: 151.1970 }
+  });
+</script>

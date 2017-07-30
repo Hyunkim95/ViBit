@@ -1,6 +1,6 @@
 <div class="full-white-bg">
   <div class="title text-center">
-    <% if @score >= 90 %>
+    <% if @score > 90 %>
       <h1 id="start-title">Great Drive</h1>
     <% else %>
       <h1 id="start-title">Oops!</h1>
@@ -12,7 +12,7 @@
   </div>
 
   <div class="flex-center driving-review">
-    <% if @score >= 90 %>
+    <% if @score > 90 %>
       <%= image_tag "good_driving.svg" %>
     <% else %>
       <%= image_tag "bad_driving.svg" %>
@@ -48,7 +48,7 @@
 
   </div>
 
-  <div class="continue-button text-center">
+  <div class="continue-button text-center bottom-padding">
     <%= link_to "CONTINUE".html_safe, page_progress_path, :class=>"btn orange-button btn-round-lg btn-lg continue"%>
   </div>
 
