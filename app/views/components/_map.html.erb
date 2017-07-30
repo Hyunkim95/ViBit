@@ -1,20 +1,38 @@
-<div style="width: 640px; height: 480px" id="mapContainer"></div>
-<script>
-  // Initialize the platform object:
-  var platform = new H.service.Platform({
-  'app_id': '{YOUR_APP_ID}',
-  'app_code': '{YOUR_APP_CODE}'
-  });
+<div id="map" style="width: 100%; height: 400px; background: grey" />
+<script  type="text/javascript" charset="UTF-8" >
 
-  // Obtain the default map types from the platform object
-  var maptypes = platform.createDefaultLayers();
+function moveMapToUltimo(map){
+map.setCenter({lat:-33.9132, lng:151.2367});
+map.setZoom(14);
+}
 
-  // Instantiate (and display) a map object:
-  var map = new H.Map(
-  document.getElementById('mapContainer'),
-  maptypes.normal.map,
-  {
-    zoom: 10,
-    center: { lng: 33.8822, lat: 151.1970 }
-  });
-</script>
+var icon = new H.map.Icon('<%= image_path('pointer.svg') %>');
+var icon2 = new H.map.Icon('<%= image_path('pointer2.svg') %>');
+
+function addMarkersToMap(map) {
+  var sign = new H.map.Marker({lat:-33.9145, lng:151.2398}, { icon: icon });
+  map.addObject(sign);
+
+  var light = new H.map.Marker({lat:-33.9041, lng: 151.2260}, { icon: icon2 });
+  map.addObject(light);
+}
+
+
+var platform = new H.service.Platform({
+app_id: 'JtlTFbTDQ5WrDPZk7SYc',
+app_code: 'eWomWx8nbpgC3LbUTltcFg',
+useCIT: true,
+useHTTPS: true
+});
+var defaultLayers = platform.createDefaultLayers();
+
+var map = new H.Map(document.getElementById('map'),
+  defaultLayers.normal.map);
+
+var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+var ui = H.ui.UI.createDefault(map, defaultLayers);
+
+moveMapToUltimo(map);
+addMarkersToMap(map);
+  </script>
