@@ -10,14 +10,14 @@ class PageController < ApplicationController
     # stats = [["traffic_light", [-33.881842, 151.20396]], ["sign_adherence", [-33.879237, 151.205443]]].to_json
     @trip_data = {
       stats: [
-        # {
-        # violation: "traffic_light",
-        # location: [-33.881842, 151.20396]
-        # },
-        # {
-        #   violation: "sign_adherence",
-        #   location: [-33.879237, 151.205443]
-        # },
+        {
+        violation: "traffic_light",
+        location: [-33.881842, 151.20396]
+        },
+        {
+          violation: "sign_adherence",
+          location: [-33.879237, 151.205443]
+        },
       ],
       start_time: "2017-07-29 06:11:00",
       end_time: "2017-07-29 06:38:00",
