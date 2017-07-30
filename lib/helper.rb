@@ -53,13 +53,13 @@ module Helper
 
   def self.get_last_half_year
     current_month = Date.today.month
-    month_names = 6.downto(1).map { |n| DateTime::MONTHNAMES[(current_month - n) % 12][0..2] }
+    month_names = 5.downto(0).map { |n| DateTime::MONTHNAMES[(current_month - n) % 12][0..2] }
     month_names
   end
 
   def self.get_deductions(user_id)
     current_month = Date.today
-    month_names = 6.downto(1).map { |n| (current_month - n.months).to_s[0..6] }
+    month_names = 5.downto(0).map { |n| (current_month - n.months).to_s[0..6] }
     month_names
 
     deductions_object = {}
@@ -85,7 +85,7 @@ module Helper
 
   def self.get_traffic_light_deductions(user_id)
     current_month = Date.today
-    month_names = 6.downto(1).map { |n| (current_month - n.months).to_s[0..6] }
+    month_names = 5.downto(0).map { |n| (current_month - n.months).to_s[0..6] }
     month_names
 
     month_object = {}
@@ -114,7 +114,7 @@ module Helper
 
   def self.get_sign_adherence_deductions(user_id)
     current_month = Date.today
-    month_names = 6.downto(1).map { |n| (current_month - n.months).to_s[0..6] }
+    month_names = 5.downto(0).map { |n| (current_month - n.months).to_s[0..6] }
     month_names
 
     month_object = {}
@@ -143,7 +143,7 @@ module Helper
 
   def self.get_speed_deductions(user_id)
     current_month = Date.today
-    month_names = 6.downto(1).map { |n| (current_month - n.months).to_s[0..6] }
+    month_names = 5.downto(0).map { |n| (current_month - n.months).to_s[0..6] }
     month_names
 
     month_object = {}
@@ -172,8 +172,8 @@ module Helper
 
   def self.get_month_range_names
     range = []
-    range.push((Time.now-1).strftime("%b %Y"))
-    range.push((Time.now-6.months).strftime("%b %Y"))
+    range.push((Time.now).strftime("%b %Y"))
+    range.push((Time.now-5.months).strftime("%b %Y"))
   end
 
   def self.total_sec(array)

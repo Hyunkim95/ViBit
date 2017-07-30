@@ -1,4 +1,26 @@
-<% @users.each do |user| %>
-  <%= user[0].email %>
-  <%= user[1] %>
-<% end %>
+<div class="top-nav-with-info">
+  <div class="back"></div>
+  <div class="heading text-center">
+    <span class="white-text thin-text">RANK</span>
+  </div>
+  <div class="back flex-center">
+    <a href="/"><%= image_tag "info.svg", height: '15px' %></a>
+  </div>
+</div>
+
+<div class="rank-container">
+  <div class="white-box text-center">FRIENDS</div>
+  <div class="orange-box text-center">STATE</div>
+  <div class="rank-box">
+
+    <% @users.each_with_index do |user, index| %>
+      <div class="individual-box">
+        <div class="padding">
+          <strong>#<%= index + 1 %></strong>
+           - <%= user[0].email %>
+          (<%= user[1] %>pts)
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

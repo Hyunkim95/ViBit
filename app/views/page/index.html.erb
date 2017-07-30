@@ -16,6 +16,7 @@
   </div>
 
   <div class="switch-account text-center">
-    <%= link_to "Switch Accounts", new_user_session_path %>
+    <%= link_to('Switch Accounts', destroy_user_session_path, method: :delete) %>
+    <%#= link_to "Switch Accounts", new_user_session_path %>
   </div>
 </div>
