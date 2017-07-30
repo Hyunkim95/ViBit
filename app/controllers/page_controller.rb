@@ -20,9 +20,9 @@ class PageController < ApplicationController
         # },
       ],
       start_time: "2017-07-29 06:11:00",
-      end_time: "2017-07-29 06:20:00",
+      end_time: "2017-07-29 06:38:00",
       start_loc: [-33.884369, 151.175759],
-      end_loc: [-33.877611, 151.211725]
+      end_loc: [-33.877611, 151.221725]
     }
     d = DateTime.now
     end_time = [@trip_data[:end_time][11..13].to_i, @trip_data[:end_time][14..16].to_i, @trip_data[:end_time][17..19].to_i]
