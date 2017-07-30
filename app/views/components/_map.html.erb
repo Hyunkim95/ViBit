@@ -6,8 +6,8 @@ map.setCenter({lat:-33.9132, lng:151.2367});
 map.setZoom(14);
 }
 
-var icon = new H.map.Icon('<%= image_path('trafficlight_orange.svg') %>');
-var icon2 = new H.map.Icon('<%= image_path('roadsigns_orange.svg') %>');
+var icon = new H.map.Icon('<%= image_path('pointer.svg') %>');
+var icon2 = new H.map.Icon('<%= image_path('pointer2.svg') %>');
 
 function addMarkersToMap(map) {
   var sign = new H.map.Marker({lat:-33.9145, lng:151.2398}, { icon: icon });
