@@ -1,29 +1,39 @@
-<h2>Sign up</h2>
+<div class="title text-center">
+  <h1 class="white" id="start-title">ViBit</h1>
+</div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<div class="subtitle text-center">
+  <h5 class="white">SHAPING TOMORROW'S DRIVERS</h5>
+</div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+<div class="text-center white-text thin-text">
+  <h2>Sign Up</h2>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <div class="field">
+      <%#= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, class: 'input-field' %>
+      <br>Email
+    </div>
+    <div class="field">
+      <%#= f.label :password %>
+      <% if @minimum_password_length %>
+      <% end %><br>
+      <%= f.password_field :password, autocomplete: "off", class: 'input-field' %>
+      <br>Password<br><em>(6 characters minimum)</em>
+    </div>
+    <div class="field">
+      <%#= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: 'input-field' %>
+      <br>Password confirmation
+    </div>
+    <br>
+    <div class="actions container">
+      <%= f.submit "Sign up", :class=>"white btn btn-primary prize white-button btn-lg start" %>
+    </div>
+  <% end %>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>
