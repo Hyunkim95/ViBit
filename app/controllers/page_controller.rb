@@ -18,8 +18,8 @@ class PageController < ApplicationController
           location: [-33.879237, 151.205443]
         },
       ],
-      start_time: "2017-04-29 06:11:00",
-      end_time: "2017-04-29 06:20:00",
+      start_time: "2017-07-29 06:11:00",
+      end_time: "2017-07-29 06:20:00",
       start_loc: [-33.884369, 151.175759],
       end_loc: [-33.877611, 151.211725]
     }
